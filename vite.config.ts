@@ -3,8 +3,10 @@ import {
   vitePlugin as remix,
   cloudflareDevProxyVitePlugin,
 } from "@remix-run/dev";
-import tsconfigPaths from "vite-tsconfig-paths";
-import { getLoadContext } from "./load-context";
+import serverAdapter from "hono-remix-adapter/vite"
+import adapter from "@hono/vite-dev-server/cloudflare"
+import tsconfigPaths from "vite-tsconfig-paths"
+import { getLoadContext } from './load-context'
 
 declare module "@remix-run/cloudflare" {
   interface Future {
@@ -14,9 +16,7 @@ declare module "@remix-run/cloudflare" {
 
 export default defineConfig({
   plugins: [
-    cloudflareDevProxyVitePlugin({
-      getLoadContext,
-    }),
+    cloudflareDevProxyVitePlugin(),
     remix({
       future: {
         v3_fetcherPersist: true,
@@ -25,6 +25,11 @@ export default defineConfig({
         v3_singleFetch: true,
         v3_lazyRouteDiscovery: true,
       },
+    }),
+    serverAdapter({
+      adapter,
+      getLoadContext,
+      entry: "server/index.ts",
     }),
     tsconfigPaths(),
   ],

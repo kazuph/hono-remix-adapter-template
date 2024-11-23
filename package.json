@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
-    "deploy": "pnpm run build && wrangler deploy",
+    "deploy:worker": "pnpm run build && wrangler deploy",
     "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "wrangler dev",
@@ -18,12 +18,15 @@
     "@remix-run/cloudflare": "^2.14.0",
     "@remix-run/react": "^2.14.0",
     "@remix-run/server-runtime": "^2.14.0",
+    "hono": "^4.6.11",
+    "hono-remix-adapter": "^0.5.0",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241112.0",
+    "@hono/vite-dev-server": "^0.17.0",
     "@remix-run/dev": "^2.14.0",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
