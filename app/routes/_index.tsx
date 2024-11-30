@@ -3,7 +3,7 @@ import { useLoaderData } from "@remix-run/react";
 import { useState } from "react";
 import { Button } from "~/components/ui/button";
 import { Plus, Minus, Rocket, Calculator, Github, Twitter } from "lucide-react";
-import { getApiClient } from "~/utils/api-client";
+import { getApiClient } from "~/lib/client";
 
 export const meta: MetaFunction = () => {
   return [
