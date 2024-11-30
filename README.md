@@ -2,6 +2,8 @@
 
 A modern web application template powered by Remix and Hono, designed to run on Cloudflare Workers.
 
+![sample](sample.png)
+
 ## 🛠 Tech Stack
 
 ### 🏗 Framework & Runtime
