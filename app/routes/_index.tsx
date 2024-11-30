@@ -2,12 +2,8 @@ import type { MetaFunction, LoaderFunctionArgs } from "@remix-run/cloudflare";
 import { useLoaderData } from "@remix-run/react";
 import { useState } from "react";
 import { Button } from "~/components/ui/button";
-import { Plus, Minus, Calculator, Github, Twitter } from "lucide-react";
-
-import type { AppType } from "../../server";
-import { hc } from "hono/client";
-
-const client = hc<AppType>("http://localhost:5173/");
+import { Plus, Minus, Rocket, Calculator, Github, Twitter } from "lucide-react";
+import { getApiClient } from "~/utils/api-client";
 
 export const meta: MetaFunction = () => {
   return [
@@ -16,8 +12,8 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export async function loader({ context }: LoaderFunctionArgs) {
-  const res = await client.api.hello.$get();
+export async function loader({ context, request }: LoaderFunctionArgs) {
+  const res = await getApiClient(request).api.hello.$get();
   return {
     text: context.cloudflare.env.EXAMPLE_VARIABLE,
     res: await res.text(),
@@ -34,7 +30,7 @@ export default function Index() {
       <header className="w-full p-4 border-b">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <Calculator className="w-6 h-6" />
+            <Rocket className="w-6 h-6" />
             <span className="text-xl font-bold">Hono Remix Template</span>
           </div>
           <div className="flex gap-4">
