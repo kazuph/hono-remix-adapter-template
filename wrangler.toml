@@ -11,4 +11,4 @@ assets = { directory = "./build/client" }
 enabled = true
 
 [vars]
-EXAMPLE_VARIABLE = "example_valiable"
+EXAMPLE_VARIABLE = "kazuph!!!"
