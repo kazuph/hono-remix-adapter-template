@@ -30,19 +30,7 @@ export default function Index() {
             <Rocket className="w-6 h-6" />
             <span className="text-xl font-bold">Hono Remix Template</span>
           </div>
-          <div className="flex gap-4">
-            <a
-              href="https://github.com/kazuph/hono-remix-adapter-template"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:opacity-80"
-            >
-              <Github className="w-6 h-6" />
-            </a>
-            <a href="https://twitter.com/kazuph" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-              <Twitter className="w-6 h-6" />
-            </a>
-          </div>
+          <div className="flex gap-4"></div>
         </div>
       </header>
 
@@ -75,14 +63,7 @@ export default function Index() {
 
       {/* Footer */}
       <footer className="w-full p-4 border-t">
-        <div className="container mx-auto text-center text-sm text-gray-600">
-          <p>
-            © 2024 Hono Remix Template. Built with 💜 by{" "}
-            <a href="https://github.com/kazuph" className="text-blue-600 hover:underline">
-              kazuph
-            </a>
-          </p>
-        </div>
+        <div className="container mx-auto text-center text-sm text-gray-600"></div>
       </footer>
     </div>
   );
