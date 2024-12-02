@@ -1,7 +1,7 @@
-import { defineConfig } from "vite";
-import { vitePlugin as remix, cloudflareDevProxyVitePlugin } from "@remix-run/dev";
-import serverAdapter from "hono-remix-adapter/vite";
 import adapter from "@hono/vite-dev-server/cloudflare";
+import { cloudflareDevProxyVitePlugin, vitePlugin as remix } from "@remix-run/dev";
+import serverAdapter from "hono-remix-adapter/vite";
+import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { getLoadContext } from "./load-context";
 
@@ -30,14 +30,6 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
-  ssr: {
-    resolve: {
-      conditions: ["workerd", "worker", "browser"],
-    },
-  },
-  resolve: {
-    mainFields: ["browser", "module", "main"],
-  },
   build: {
     minify: true,
   },

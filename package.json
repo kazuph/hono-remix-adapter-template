@@ -5,17 +5,18 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
-    "deploy:worker": "pnpm run build && wrangler deploy",
+    "preview": "pnpm run build && wrangler pages dev",
+    "deploy:pages": "pnpm run build && wrangler pages deploy",
     "dev": "remix vite:dev",
     "lint": "biome lint .",
     "format": "biome format . --write",
     "start": "wrangler dev",
     "typecheck": "tsc",
     "typegen": "wrangler types",
-    "preview": "pnpm run build && wrangler dev",
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "@hono/vite-dev-server": "^0.17.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@remix-run/cloudflare": "^2.15.0",
     "@remix-run/react": "^2.15.0",
@@ -34,7 +35,6 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@cloudflare/workers-types": "^4.20241127.0",
-    "@hono/vite-dev-server": "^0.17.0",
     "@remix-run/dev": "^2.15.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",

@@ -1,6 +1,6 @@
 # 🚀 Hono Remix Adapter Template
 
-A modern web application template powered by Remix and Hono, designed to run on Cloudflare Workers.
+A modern web application template powered by Remix and Hono, designed to run on Cloudflare Pages.
 
 ![sample](sample.png)
 
@@ -8,7 +8,7 @@ A modern web application template powered by Remix and Hono, designed to run on 
 
 ### 🏗 Framework & Runtime
 - 🎵 Remix v2.14.0
-- ☁️ Cloudflare Workers
+- ☁️ Cloudflare Pages
 - 🔌 Hono Adapter v0.5.0
 
 ### 🎨 UI/UX Libraries
@@ -30,19 +30,19 @@ A modern web application template powered by Remix and Hono, designed to run on 
 ```bash
 # Development
 pnpm run dev          # 🔥 Start Vite development server
-pnpm run preview      # 👀 Preview build with Wrangler
+pnpm run preview      # 👀 Preview build locally
 
 # Build & Deploy
 pnpm run build        # 📦 Build Remix application
-pnpm run deploy:worker # 🚀 Build and deploy to Cloudflare Workers
+pnpm run deploy:pages  # 🚀 Deploy to Cloudflare Pages
 
 # Type Checking & Generation
 pnpm run typecheck    # ✅ Run TypeScript type checking
-pnpm run typegen      # 🏗 Generate Wrangler types
-pnpm run cf-typegen   # ☁️ Generate Cloudflare Workers types
+pnpm run typegen      # 🏗 Generate type definitions
+pnpm run cf-typegen   # ☁️ Generate Cloudflare types
 
 # Others
-pnpm run start        # 🌐 Start Wrangler development server
+pnpm run start        # 🌐 Start development server
 pnpm run lint         # 🔍 Run ESLint code quality checks
 ```
 
@@ -53,8 +53,11 @@ pnpm run lint         # 🔍 Run ESLint code quality checks
   - 💾 Fetcher Persistence
   - 🛣 Relative Splat Paths
   - 🔄 Lazy Route Discovery
-- ☁️ Cloudflare Workers Optimization
-- 🔌 Hono Adapter & Cloudflare Dev Proxy Integration
+- ☁️ Cloudflare Pages Integration
+  - 🌐 Edge Runtime
+  - 🔄 Automatic Deployments
+  - 🌍 Global CDN
+- 🔌 Hono Adapter Integration
 
 ## 📋 Requirements
 
