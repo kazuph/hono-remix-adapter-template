@@ -1,15 +1,12 @@
-import type { MetaFunction, LoaderFunctionArgs } from "@remix-run/cloudflare";
+import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/cloudflare";
 import { useLoaderData } from "@remix-run/react";
+import { Calculator, Github, Minus, Plus, Rocket, Twitter } from "lucide-react";
 import { useState } from "react";
 import { Button } from "~/components/ui/button";
-import { Plus, Minus, Rocket, Calculator, Github, Twitter } from "lucide-react";
 import { getApiClient } from "~/lib/client";
 
 export const meta: MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
+  return [{ title: "New Remix App" }, { name: "description", content: "Welcome to Remix!" }];
 };
 
 export async function loader({ context, request }: LoaderFunctionArgs) {
@@ -42,12 +39,7 @@ export default function Index() {
             >
               <Github className="w-6 h-6" />
             </a>
-            <a
-              href="https://twitter.com/kazuph"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:opacity-80"
-            >
+            <a href="https://twitter.com/kazuph" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
               <Twitter className="w-6 h-6" />
             </a>
           </div>
@@ -63,19 +55,11 @@ export default function Index() {
           </h1>
           <div className="text-2xl">{count}</div>
           <div className="flex gap-2">
-            <Button
-              variant="outline"
-              onClick={() => setCount((prev) => prev - 1)}
-            >
-              <Minus className="w-4 h-4 mr-1" />
-              1
+            <Button variant="outline" onClick={() => setCount((prev) => prev - 1)}>
+              <Minus className="w-4 h-4 mr-1" />1
             </Button>
-            <Button
-              variant="default"
-              onClick={() => setCount((prev) => prev + 1)}
-            >
-              <Plus className="w-4 h-4 mr-1" />
-              1
+            <Button variant="default" onClick={() => setCount((prev) => prev + 1)}>
+              <Plus className="w-4 h-4 mr-1" />1
             </Button>
           </div>
         </div>
@@ -92,7 +76,12 @@ export default function Index() {
       {/* Footer */}
       <footer className="w-full p-4 border-t">
         <div className="container mx-auto text-center text-sm text-gray-600">
-          <p>© 2024 Hono Remix Template. Built with 💜 by <a href="https://github.com/kazuph" className="text-blue-600 hover:underline">kazuph</a></p>
+          <p>
+            © 2024 Hono Remix Template. Built with 💜 by{" "}
+            <a href="https://github.com/kazuph" className="text-blue-600 hover:underline">
+              kazuph
+            </a>
+          </p>
         </div>
       </footer>
     </div>
